@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="registeredDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="usersTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="1" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="1" />
+          <Property Name="dateOfBirth" Type="datetime" />
+          <Property Name="gender" Type="nvarchar" MaxLength="1" />
+          <Property Name="resident" Type="nvarchar" MaxLength="1" />
+          <Property Name="privateId" Type="bigint" />
+          <Property Name="dateOfRegistration" Type="datetime" />
+          <Property Name="registrationIp" Type="nvarchar" MaxLength="1" />
+          <Property Name="userLanguage" Type="nvarchar" MaxLength="1" />
+          <Property Name="mail" Type="nvarchar" MaxLength="1" />
+          <Property Name="mobile" Type="bigint" />
+          <Property Name="userPassword" Type="nvarchar" MaxLength="1" />
+          <Property Name="country" Type="nvarchar" MaxLength="1" />
+          <Property Name="regionState" Type="nvarchar" MaxLength="1" />
+          <Property Name="city" Type="nvarchar" MaxLength="1" />
+          <Property Name="addressOne" Type="nvarchar" MaxLength="1" />
+          <Property Name="addressTwo" Type="nvarchar" MaxLength="1" />
+          <Property Name="postalCode" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="registeredDbModelStoreContainer">
+          <EntitySet Name="usersTable" EntityType="Self.usersTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="registeredDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="usersTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="dateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="resident" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="privateId" Type="Int64" />
+          <Property Name="dateOfRegistration" Type="DateTime" Precision="3" />
+          <Property Name="registrationIp" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="userLanguage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="Int64" />
+          <Property Name="userPassword" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="regionState" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="addressOne" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="addressTwo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="postalCode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="registeredDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="usersTables" EntityType="Self.usersTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="registeredDbModelStoreContainer" CdmEntityContainer="registeredDbEntities">
+          <EntitySetMapping Name="usersTables">
+            <EntityTypeMapping TypeName="registeredDbModel.usersTable">
+              <MappingFragment StoreEntitySet="usersTable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="resident" ColumnName="resident" />
+                <ScalarProperty Name="privateId" ColumnName="privateId" />
+                <ScalarProperty Name="dateOfRegistration" ColumnName="dateOfRegistration" />
+                <ScalarProperty Name="registrationIp" ColumnName="registrationIp" />
+                <ScalarProperty Name="userLanguage" ColumnName="userLanguage" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="regionState" ColumnName="regionState" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="addressOne" ColumnName="addressOne" />
+                <ScalarProperty Name="addressTwo" ColumnName="addressTwo" />
+                <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
